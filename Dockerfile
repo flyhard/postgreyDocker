@@ -7,10 +7,6 @@ RUN apt-get update &&\
 
 # Use syslog-ng to get Postfix logs (rsyslog uses upstart which does not seem
 # to run within Docker).
-RUN apt-get install -q -y syslog-ng
-ADD consul_0.6.3_linux_amd64.zip /
-RUN unzip /consul_0.6.3_linux_amd64.zip
-ADD postgrey.json /etc/consul.d/
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
