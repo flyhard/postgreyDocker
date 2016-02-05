@@ -2,7 +2,7 @@ FROM debian:jessie
 MAINTAINER Per Abich <per.abich@gmail.com>
 
 RUN apt-get update &&\
- DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgrey vim curl unzip &&\
+ DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgrey curl unzip &&\
  rm -rf /var/lib/apt/lists/*
 
 # Use syslog-ng to get Postfix logs (rsyslog uses upstart which does not seem
