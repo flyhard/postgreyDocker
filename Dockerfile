@@ -7,8 +7,6 @@ RUN apt-get update &&\
 ADD consul /usr/bin
 ADD run.sh /
 RUN chmod +x /run.sh
-ADD consul.sh /etc/init.d/consul
-RUN chmod +x /etc/init.d/consul
 ADD config /etc/consul/
 EXPOSE 60000
 CMD ["/run.sh"]
