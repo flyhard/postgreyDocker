@@ -4,9 +4,11 @@ MAINTAINER Per Abich <per.abich@gmail.com>
 RUN apt-get update &&\
  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgrey curl unzip &&\
  rm -rf /var/lib/apt/lists/*
-
-ADD entrypoint.sh /
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+ADD consul /usr/bin
+ADD run.sh /
+RUN chmod +x /run.sh
+ADD consul.sh /etc/init.d/consul
+RUN chmod +x /etc/init.d/consul
+ADD config /etc/consul/
 EXPOSE 60000
-CMD ["/usr/sbin/postgrey", "--inet=0.0.0.0:60000" ]
+CMD ["/run.sh"]

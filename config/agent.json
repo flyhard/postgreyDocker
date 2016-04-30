@@ -1,0 +1,18 @@
+{
+  "service": {
+    "name": "postgrey",
+    "tags": ["master"],
+    "address": "127.0.0.1",
+    "port": 60000,
+    "enableTagOverride": false,
+    "checks": [
+      {
+        "id": "postgrey",
+        "tcp": "localhost:60000",
+        "interval": "10s",
+        "timeout": "1s",
+        "ttl": "30s"
+      }
+    ]
+  }
+}

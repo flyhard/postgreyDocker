@@ -1,6 +1,0 @@
-{
-  "service": {
-    "name": "postgrey",
-    "port": 10024
-  }
-}
