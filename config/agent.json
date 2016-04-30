@@ -5,14 +5,9 @@
     "address": "127.0.0.1",
     "port": 60000,
     "enableTagOverride": false,
-    "checks": [
-      {
-        "id": "postgrey",
-        "tcp": "localhost:60000",
-        "interval": "10s",
-        "timeout": "1s",
-        "ttl": "30s"
-      }
-    ]
+    "check": {
+      "interval": "5s",
+      "tcp": "127.0.0.1:60000"
+    }
   }
 }
